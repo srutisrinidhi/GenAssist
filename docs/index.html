@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAssist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .header, .abstract, .image, .video {
+            text-align: center;
+        }
+        .authors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 720px;
+            margin: auto;
+        }
+        .author {
+            margin-bottom: 20px;
+        }
+        .author b {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .author small {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .image img, .abstract, .video iframe {
+            width: 70%;
+            max-width: 70%;
+        }
+        .spacing {
+            margin-top: 40px;
+        }
+        .abstract {
+            text-align: justify;
+            margin: auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>GenAssist</h1>
+            <h2>Interactive Prompt-Driven XR Program Generation</h2>
+            <h4> IEEE VR '26</h4>
+        </div>
+        <div class="authors spacing">
+            <div class="author">
+                <b> <a href="https://srutisrinidhi.com">Sruti Srinidhi </a></b>
+                <small>Carnegie Mellon University</small>
+            </div>
+            <div class="author">
+                <b> <a href="https://www.linkedin.com/in/akulsingh/"> Akul Singh</a> </b>
+                <small>Carnegie Mellon University</small>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="authors spacing"> -->
+            <div class="author">
+                <b><a href="https://users.ece.cmu.edu/~elu2/">Edward Lu </a></b>
+                <small>Carnegie Mellon University</small>
+            </div>
+            <div class="author">
+                <b> <a href="https://users.ece.cmu.edu/~agr/">Anthony Rowe </a></b>
+                <small>Carnegie Mellon University<br>Bosch Research</small>
+            </div>
+        </div>
+        <div class="buttons spacing">
+            <a href="https://github.com/srutisrinidhi/XaiR/raw/main/docs/xair_paper.pdf" class="button" target="_blank">Conference Paper</a>
+            <a href="https://github.com/srutisrinidhi/XaiR" class="button">Code</a>
+            <a href="https://github.com/srutisrinidhi/XaiR" class="button">Demo Paper</a>
+            <a href="https://github.com/srutisrinidhi/XaiR" class="button">Video</a>
+        </div>
+        <div class="image spacing">
+            <video 
+                src="assets/loop.mp4"
+                autoplay muted loop
+                style="width:70%; height:auto;"
+                ></video>
+
+        </div>
+        <div class="abstract spacing">
+            <h3>Overview</h3>
+            <p>
+                GenAssist is a system designed to make building interactive XR experiences 
+                fast and accessible using natural language. Users describe what they want to create, 
+                and GenAssist generates a runnable XR program that places 3D objects, loads models, 
+                adds animations, and defines interactions in a virtual scene. The system supports iterative 
+                development, allowing users to refine and extend their scene simply by updating their prompts 
+                as their ideas evolve. GenAssist targets rapid prototyping, learning, and experimentation, 
+                lowering the barrier to XR creation for users who may not have traditional programming or 3D design expertise.
+            </p>
+        </div>
+        <div class="image spacing">
+            <h2> Example GenAssist XR programs generated from prompts</h2>
+            <img src="assets/genassist_examples.png" alt="Descriptive Image Text" />
+        </div>
+        <div class="image spacing">
+            <h2> How GenAssist Works</h2>
+            <img src="assets/System_Design.png" alt="Descriptive Image Text" />
+        </div>
+        <div class="abstract spacing">
+            <p>
+                At the core of GenAssist is a closed-loop correction mechanism that mimics how human developers 
+                build and test XR programs. After generating and executing a program, the system inspects the scene 
+                using virtual cameras to render an image of the scene, capture 3D coordinates of the objects, as well as scene state to 
+                determine whether the result matches the user’s intent. When errors or mismatches are detected—such as missing objects, 
+                incorrect placements, or broken interactions—GenAssist automatically updates the program and re-runs it. 
+                To make this process reliable, the system grounds each generation step using Retrieval-Augmented Generation (RAG), 
+                pulling relevant documentation and example code to ensure corrections are syntactically valid and platform-aware. 
+                Together, retrieval and correction enable GenAssist to converge on working XR programs through iterative self-improvement 
+                rather than one-shot generation.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
