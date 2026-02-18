@@ -86,7 +86,7 @@ The scene is created automatically the first time you connect. You can view it i
 ## Running GenAssist
 
 ```bash
-python scripts/arena_run_python.py
+python scripts/main.py
 ```
 
 On first run, a browser window will open and prompt you to authenticate with your ARENA account. Once logged in, the session is saved and future runs will not require re-authentication.
